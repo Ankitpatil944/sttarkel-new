@@ -1,0 +1,39 @@
+# How to run and test Locally (for running the local dev server or doing work inside frontend (you currently have a Python venv active there)):
+
+1. Go to:- 
+    "PS E:\Internship Sttarkel\6 MONTHS\website-trail-main (2)\website-trail-main - Copy\frontend>"
+
+2. Then:
+
+    python -m venv venv
+    .\venv\Scripts\activate
+    npm run dev
+
+
+(
+    
+    PS E:\Internship Sttarkel\6 MONTHS\website-trail-main (2)\website-trail-main - Copy\frontend> python -m venv venv
+    PS E:\Internship Sttarkel\6 MONTHS\website-trail-main (2)\website-trail-main - Copy\frontend> .\venv\Scripts\activate
+    (venv) PS E:\Internship Sttarkel\6 MONTHS\website-trail-main (2)\website-trail-main - Copy\frontend> npm run dev
+)
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+# To Push on GitHub & Deploy on Vercel ((the project root) to do your Git pushes and to connect the whole repo to GitHub. & Deploy on Vercel):
+
+1. Go to:- 
+    "PS E:\Internship Sttarkel\6 MONTHS\website-trail-main (2)\website-trail-main - Copy>"
+
+2. Then:
+	git add .
+	git commit -m "Initial commit - add project"
+    git branch -M main   
+    git push -u origin main
+
+(
+    PS E:\Internship Sttarkel\6 MONTHS\website-trail-main (2)\website-trail-main - Copy> git add .                                       
+    PS E:\Internship Sttarkel\6 MONTHS\website-trail-main (2)\website-trail-main - Copy> git commit -m "Initial commit - add project"    
+    PS E:\Internship Sttarkel\6 MONTHS\website-trail-main (2)\website-trail-main - Copy> git branch -M main      
+    PS E:\Internship Sttarkel\6 MONTHS\website-trail-main (2)\website-trail-main - Copy> git push -u origin main  
+)

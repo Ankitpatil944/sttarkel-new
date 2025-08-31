@@ -40,7 +40,9 @@ const Feature108 = ({
       {/* Header */}
       <div className="flex flex-col items-center gap-4 text-center">
         <Badge variant="outline">{badge}</Badge>
-        <h1 className="max-w-2xl text-3xl font-semibold md:text-4xl">
+        {/* <h1 className="max-w-2xl text-3xl font-semibold md:text-4xl"> */}
+        <h1 className="max-w text-xl mb-6 sm:text-4xl md:text-6xl lg:text-4xl font-normal leading-tight text-[#2D3253]">
+
           {heading}
         </h1>
         <p className="text-muted-foreground">{description}</p>
