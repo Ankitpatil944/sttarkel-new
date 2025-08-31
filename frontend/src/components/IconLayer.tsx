@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import FloatingIcon from "./FloatingIcon";
+import { Badge } from "@/components/ui/badge";
 
 interface IconConfig {
   src: string;
@@ -161,11 +162,19 @@ const IconLayer: React.FC = () => {
       {/* Foreground Content */}
       <div className="relative z-10">
         <div className="text-center max-w-4xl mx-auto">
-          <div className="inline-flex items-center space-x-2 bg-card/50 backdrop-blur-sm rounded-full px-4 py-2 mb-8 border border-primary/20">
+          {/* <div className="inline-flex items-center space-x-2 bg-card/50 backdrop-blur-sm rounded-full px-4 py-2 mb-8 border border-primary/20">
             <span className="text-sm font-medium">
               Professional Assessment Platform
             </span>
-          </div>
+          </div> */}
+          <Badge
+          variant="outline"
+          className="w-fit mx-auto mb-6 lg:mx-0 bg-gradient-to-r from-slate-50 to-slate-100 text-[#2D3253]"
+          >
+            {/* Trusted by 100+ businesses */}
+            Professional Assessment Platform
+          </Badge>
+
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-normal mb-6 leading-tight text-[#2D3253]">
             Build the Skills that <br />
             power your{" "}
@@ -217,7 +226,8 @@ const IconLayer: React.FC = () => {
           alt="Career Icon"
           width={600}
           height={600}
-          className="inline-block mr-10 mt-16 lg:mx-10 align-middle border-gray-200 border-opacity-60 rounded-xl"
+          // className="inline-block mr-10 mt-16 lg:mx-10 align-middle border-gray-200 border-opacity-60 rounded-xl"
+          className="inline-block mr-10 mt-0 lg:mx-10 align-middle border-gray-200 border-opacity-60 rounded-xl"
           style={{
             verticalAlign: "middle",
             transform: "translateY(20%)",

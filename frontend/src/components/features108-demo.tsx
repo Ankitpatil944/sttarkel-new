@@ -37,18 +37,18 @@ const demoData = {
   {
     value: "tab-3",
     icon: <Layout className="h-auto w-4 shrink-0" />,
-    label: "Personalized Training",
+    label: "Quick Test",
     content: {
       badge: "Guided Practice",
-      title: "Bridge gaps with targeted learning.",
+      title: "Bridge gaps with Quick Test.",
       description:
-        "Offer personalized learning paths, mock interview practice, and curated resources to help candidates excel in future interviews.",
-      buttonText: "Explore Training",
-      imageSrc: "/Images/Icons/Hiring6.png", // replace with your image
-      imageAlt: "Personalized AI training",
+        "Offer personalized quick test, mock interview practice, and curated resources to help candidates excel in future interviews.",
+      buttonText: "Start Quick Test",
+      imageSrc: "/Images/Icons/Quick_Test.png", // replace with your image
+      imageAlt: "Quick Test",
 
       },
-    },
+    }
   ],
 };
 
