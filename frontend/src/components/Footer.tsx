@@ -73,7 +73,7 @@ const Footer = () => {
           {/* Logo and Contact */}
           <div className="md:col-span-1">
             <div className="flex items-center space-x-2 mb-6">
-              <img src="/logos/AIspire_logo.png" alt="Sttarkel Logo" className="h-10 w-auto" />
+              <img src="/logos/AIspire_logo5.jpg" alt="Sttarkel Logo" className="h-10 w-auto" />
             </div>
             <div className="space-y-4">
               <Button className="w-full bg-black text-white hover:bg-gray-800">

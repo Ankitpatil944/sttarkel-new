@@ -222,7 +222,7 @@ const IconLayer: React.FC = () => {
         </div>
 
         <img
-          src="/Images/Sttarkel_Student4.png"
+          src="/Images/Sttarkel_Student6.png"
           alt="Career Icon"
           width={600}
           height={600}

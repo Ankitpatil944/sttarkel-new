@@ -82,7 +82,7 @@ export const Menu = ({
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <img
-            src="/logos/AIspire_logo.png"
+            src="/logos/AIspire_logo5.jpg"
             alt="Company Logo"
             className="h-8 sm:h-10 md:h-12 w-auto"
           />

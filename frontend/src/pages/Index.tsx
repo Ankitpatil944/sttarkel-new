@@ -390,7 +390,7 @@ return (
 
       <div className="px-4 sm:px-6 lg:px-8 text-center">
         <div className="h-[16rem] flex items-center justify-center tracking-widest">
-          <TextHoverEffect text=" AIspire " />
+          <TextHoverEffect text=" AInode " />
         </div>
       </div>
     </div>
