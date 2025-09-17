@@ -23,8 +23,6 @@ import BecomeMentor from "./pages/BecomeMentor";
 import AIAssessment from "./pages/AIAssessment";
 import ResumeBuilder from "./pages/ResumeBuilder";
 import JobListing from "./pages/JobListing";
-import CareerRoadmap from "./pages/CareerRoadmap";
-import Placement from "./pages/Placement";
 import AssessmentPage from "./pages/AssessmentPage";
 import InterviewPage from "./pages/InterviewPage";
 
@@ -63,8 +61,6 @@ const App = () => {
             <Route path="/ai-assessment" element={<AIAssessment />} />
             <Route path="/services/resume-builder" element={<ResumeBuilder />} />
             <Route path="/services/jobs" element={<JobListing />} />
-            <Route path="/services/career-roadmap" element={<CareerRoadmap />} />
-            <Route path="/services/placement" element={<Placement />} />
             <Route path="/assessment" element={<AssessmentPage />} />
             <Route path="/interview-page" element={<InterviewPage />} />
             <Route path="*" element={<NotFound />} />

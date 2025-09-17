@@ -6,8 +6,6 @@ import {
   FileText, 
   Search, 
   Bot, 
-  Map, 
-  Users,
   ArrowRight,
   Sparkles,
   CheckCircle,
@@ -20,95 +18,66 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
+import { Navbar } from "@/components/ui/navbar-menu";
+import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import './OutlinedText.css';
 
 const Services = () => {
   const services = [
     {
       id: "resume-builder",
-      title: "Resume Builder",
-      description: "Create professional, ATS-optimized resumes that stand out to hiring managers and pass through applicant tracking systems.",
+      title: "AI Resume Builder",
+      description: "Create stunning, ATS-optimized resumes that get you noticed. Our AI analyzes job descriptions and tailors your resume for maximum impact.",
       icon: FileText,
       features: [
-        "AI-powered content suggestions",
-        "ATS optimization",
-        "Multiple professional templates",
-        "Real-time feedback and scoring",
-        "Export to PDF/Word formats"
+        "AI-powered content optimization",
+        "ATS-friendly formatting",
+        "20+ professional templates",
+        "Real-time ATS score feedback",
+        "Industry-specific keywords",
+        "One-click PDF export"
       ],
-      price: "Free",
       cta: "Build Resume",
       path: "/services/resume-builder",
-      color: "from-blue-500/10 to-blue-600/10"
+      color: "from-blue-500/10 to-blue-600/10",
+      popular: false
     },
     {
       id: "job-listing",
-      title: "Job Listing",
-      description: "Access curated job opportunities from top companies, filtered by your skills, experience, and career goals.",
+      title: "Smart Job Matching",
+      description: "Discover your dream job with our intelligent matching system. Get personalized recommendations from 10,000+ verified opportunities.",
       icon: Search,
       features: [
-        "Curated job recommendations",
-        "Advanced filtering options",
-        "Company insights and reviews",
-        "One-click application tracking",
-        "Salary insights and negotiations"
+        "AI-powered job matching",
+        "10,000+ verified listings",
+        "Salary insights & trends",
+        "Company culture insights",
+        "Application tracking",
+        "Interview preparation tips"
       ],
-      price: "Free",
-      cta: "Browse Jobs",
+      cta: "Find Jobs",
       path: "/services/jobs",
-      color: "from-green-500/10 to-green-600/10"
+      color: "from-green-500/10 to-green-600/10",
+      popular: false
     },
     {
       id: "ai-assessment",
-      title: "AI Assessment",
-      description: "Take comprehensive skill assessments powered by AI to evaluate your technical and soft skills with detailed feedback.",
+      title: "AI Skill Assessment",
+      description: "Master your skills with our comprehensive AI-driven assessments. Get detailed feedback and personalized learning paths.",
       icon: Bot,
       features: [
         "Adaptive difficulty testing",
         "Real-time performance analysis",
         "Detailed skill breakdown",
-        "Personalized improvement plans",
-        "Industry benchmarking"
+        "Personalized learning paths",
+        "Industry benchmarking",
+        "Progress tracking"
       ],
-      price: "From $29",
       cta: "Start Assessment",
       path: "/services/ai-assessment",
-      color: "from-purple-500/10 to-purple-600/10"
+      color: "from-purple-500/10 to-purple-600/10",
+      popular: true
     },
-    {
-      id: "career-roadmap",
-      title: "Career Roadmap",
-      description: "Get personalized career guidance with AI-driven roadmaps that help you plan your professional development journey.",
-      icon: Map,
-      features: [
-        "Personalized career planning",
-        "Skill gap analysis",
-        "Learning path recommendations",
-        "Industry trend insights",
-        "Progress tracking and milestones"
-      ],
-      price: "From $49",
-      cta: "Plan Career",
-      path: "/services/career-roadmap",
-      color: "from-orange-500/10 to-orange-600/10"
-    },
-    {
-      id: "placement",
-      title: "Placement",
-      description: "Connect with our network of hiring partners and get direct placement opportunities with top companies.",
-      icon: Users,
-      features: [
-        "Direct company connections",
-        "Priority candidate status",
-        "Interview preparation support",
-        "Negotiation guidance",
-        "Ongoing career support"
-      ],
-      price: "From $99",
-      cta: "Get Placed",
-      path: "/services/placement",
-      color: "from-red-500/10 to-red-600/10"
-    }
   ];
 
   const containerVariants = {
@@ -134,10 +103,17 @@ const Services = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-bg">
-      <div className="min-h-screen max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 
-                    m-4 sm:m-6 lg:m-10 bg-gradient-bg border border-blue-300 rounded-3xl overflow-hidden bg-gradient-to-b from-slate-100 to-cyan-50
-                    animate-fade-in mt-20" style={{ marginTop: '5rem' }}>
+    <div className="min-h-screen bg-[#031527]">
+      <Navbar />
+      <div className="relative w-full animate-fade-in">
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="relative z-40 lg:min-h-screen max-w-screen-2xl mx-auto pt-16 bg-gradient-to-b from-cyan-100 to-white overflow-hidden"
+        >
+          <div className="relative max-w-7xl mx-auto pt-16 lg:pt-20">
         
         {/* Hero Section */}
         <section className="relative pt-20 mt-10 pb-20">
@@ -159,7 +135,7 @@ const Services = () => {
               </h1>
               
               <p className="text-xl text-muted-foreground mb-10 max-w-3xl mx-auto leading-relaxed animate-fade-in">
-                From resume building to job placement, we provide comprehensive tools and services 
+                From resume building to skill assessment, we provide comprehensive tools and services 
                 to help you navigate every step of your professional journey.
               </p>
             </motion.div>
@@ -170,7 +146,7 @@ const Services = () => {
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-3 gap-8"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -178,7 +154,12 @@ const Services = () => {
             >
               {services.map((service, index) => (
                 <motion.div key={service.id} variants={itemVariants}>
-                  <Card className="p-8 bg-gradient-card border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-glow-accent group hover-scale animate-fade-in h-full">
+                  <Card className="relative p-8 bg-gradient-card border-primary/10 hover:border-primary/30 transition-all duration-300 hover:shadow-glow-accent group hover-scale animate-fade-in h-full">
+                    {service.popular && (
+                      <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0">
+                        Most Popular
+                      </Badge>
+                    )}
                     <div className="text-center mb-6">
                       <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors group-hover:animate-pulse">
                         <service.icon className="h-8 w-8 text-primary" />
@@ -186,12 +167,9 @@ const Services = () => {
                       <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
                         {service.title}
                       </h3>
-                      <p className="text-muted-foreground leading-relaxed mb-4">
+                      <p className="text-muted-foreground leading-relaxed mb-6">
                         {service.description}
                       </p>
-                      <div className="text-2xl font-bold text-primary mb-4">
-                        {service.price}
-                      </div>
                     </div>
                     
                     <div className="space-y-3 mb-6">
@@ -281,6 +259,52 @@ const Services = () => {
           </div>
         </section>
 
+        {/* Success Stats Section */}
+        <section className="py-20 bg-muted/30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div 
+              className="text-center mb-16 animate-fade-in"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">
+                Proven 
+                <span className="bg-gradient-primary bg-clip-text text-transparent"> Results</span>
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Join thousands of professionals who have transformed their careers with our services
+              </p>
+            </motion.div>
+            
+            <motion.div 
+              className="grid grid-cols-2 md:grid-cols-4 gap-8"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <motion.div variants={itemVariants} className="text-center">
+                <div className="text-4xl font-bold text-primary mb-2">10,000+</div>
+                <div className="text-muted-foreground">Resumes Created</div>
+              </motion.div>
+              <motion.div variants={itemVariants} className="text-center">
+                <div className="text-4xl font-bold text-primary mb-2">5,000+</div>
+                <div className="text-muted-foreground">Jobs Matched</div>
+              </motion.div>
+              <motion.div variants={itemVariants} className="text-center">
+                <div className="text-4xl font-bold text-primary mb-2">2,500+</div>
+                <div className="text-muted-foreground">Assessments Taken</div>
+              </motion.div>
+              <motion.div variants={itemVariants} className="text-center">
+                <div className="text-4xl font-bold text-primary mb-2">95%</div>
+                <div className="text-muted-foreground">Success Rate</div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="py-20">
           <div className="max-w-4xl mx-auto text-center">
@@ -292,34 +316,44 @@ const Services = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Ready to Accelerate Your Career?
+                Ready to Transform Your Career?
               </h2>
               <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Start with any of our services and see the difference professional tools can make. 
-                Your success journey begins here.
+                Start your journey today with our comprehensive career services. 
+                Join thousands of successful professionals who chose the right path.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="text-lg px-8 py-6 group hover-scale">
-                  Explore Services
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button variant="outline" size="lg" className="text-lg px-8 py-6 hover-scale">
-                  Schedule Consultation
-                </Button>
+                <Link to="/services/ai-assessment">
+                  <Button size="lg" className="text-lg px-8 py-6 group hover-scale">
+                    Start Free Assessment
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                <Link to="/mentorship">
+                  <Button variant="outline" size="lg" className="text-lg px-8 py-6 hover-scale">
+                    Find a Mentor
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           </div>
         </section>
 
+          </div>
+        </motion.section>
+      </div>
+
+      {/* Footer Section */}
+      <div
+        className="-mt-16 relative z-10 min-h-screen max-w-screen-2xl mx-auto px-2 sm:px-6 lg:px-8 border border-blue-300 rounded-tl-[70px] rounded-tr-[70px] overflow-hidden bg-[#FFFFFF] animate-fade-in"
+      >
         {/* Footer */}
         <Footer />
 
         <div className="px-4 sm:px-6 lg:px-8 text-center">
-          <h1
-            className="outlined-text text-[3.5rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] xl:text-[12rem] 2xl:text-[14rem] leading-none tracking-widest"
-          >
-            STTARKEL
-          </h1>
+          <div className="h-[16rem] flex items-center justify-center tracking-widest">
+            <TextHoverEffect text=" AInode " />
+          </div>
         </div>
       </div>
     </div>

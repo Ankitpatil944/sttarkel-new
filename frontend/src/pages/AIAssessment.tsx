@@ -27,6 +27,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from 'framer-motion';
 import Footer from "@/components/Footer";
+import { Navbar } from "@/components/ui/navbar-menu";
 import './OutlinedText.css';
 
 const AIAssessment = () => {
@@ -170,6 +171,7 @@ const AIAssessment = () => {
 
   return (
     <div className="min-h-screen bg-gradient-bg">
+      <Navbar />
       <div
         className="min-h-screen max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 
                     m-4 sm:m-6 lg:m-10 bg-gradient-bg border border-blue-300 rounded-3xl overflow-hidden bg-gradient-to-b from-slate-100 to-cyan-50

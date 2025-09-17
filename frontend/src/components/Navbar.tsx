@@ -30,7 +30,6 @@ const Navbar = () => {
         { name: "Resume Builder", path: "/services/resume-builder" },
         { name: "Job Listing", path: "/services/jobs" },
         { name: "AI Assessment", path: "/services/ai-assessment" },
-        { name: "Placement", path: "/services/placement" },
       ],
     },
     { name: "Blogs/News", path: "/blogs" },

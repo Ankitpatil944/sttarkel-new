@@ -46,13 +46,13 @@ export const MenuItem = ({
           {active === item && (
             <div
               className="absolute top-[calc(100%+1.2rem)] left-1/2 transform -translate-x-1/2 pt-4 w-screen hidden md:block"
-              style={{ maxWidth: "720px" }}
+              style={{ maxWidth: "800px" }}
             >
               <motion.div
                 layoutId="active"
                 className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/20 dark:border-white/20 shadow-xl"
               >
-                <motion.div layout className="w-max h-full p-4">
+                <motion.div layout className="w-full h-full">
                   {children}
                 </motion.div>
               </motion.div>
@@ -155,19 +155,19 @@ export const ProductItem = ({
   src: string;
 }) => {
   return (
-    <a href={href} className="flex space-x-2">
+    <a href={href} className="flex flex-col space-y-3 hover:bg-gray-50 dark:hover:bg-gray-800 p-3 rounded-lg transition-colors">
       <img
         src={src}
-        width={140}
-        height={70}
+        width={80}
+        height={60}
         alt={title}
-        className="shrink-0 rounded-md shadow-2xl"
+        className="w-20 h-15 object-cover rounded-md shadow-lg mx-auto"
       />
-      <div>
-        <h4 className="text-xl font-bold mb-1 text-black dark:text-white">
+      <div className="text-center">
+        <h4 className="text-lg font-bold mb-2 text-black dark:text-white">
           {title}
         </h4>
-        <p className="text-neutral-500 text-sm max-w-[10rem] dark:text-neutral-300">
+        <p className="text-neutral-500 text-xs leading-relaxed dark:text-neutral-300">
           {description}
         </p>
       </div>
@@ -195,6 +195,10 @@ export function Navbar({ className }: { className?: string }) {
   return (
     <div className={cn("fixed top-0 inset-x-0 z-50", className)}>
       <Menu setActive={setActive}>
+        <Link to="/">
+          <MenuItem setActive={setActive} active={null} item="Home" />
+        </Link>
+        
         <Link to="/about">
           <MenuItem setActive={setActive} active={null} item="About Us">
             {/* <div className="flex flex-col space-y-4 text-sm">
@@ -208,30 +212,24 @@ export function Navbar({ className }: { className?: string }) {
         
         <Link to="/services">
           <MenuItem setActive={setActive} active={active} item="Services" >
-            <div className="text-sm grid grid-cols-2 gap-8 p-4">
+            <div className="text-sm grid grid-cols-3 gap-4 p-4">
               <ProductItem
                 title="Resume Builder"
                 href="/services/resume-builder"
-                src="https://assets.aceternity.com/demos/algochurn.webp"
+                src="/Images/Icons/resume.png"
                 description="Create professional resumes in minutes with our easy-to-use builder."
               />
               <ProductItem
                 title="Job Listing"
                 href="/services/jobs"
-                src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
+                src="/Images/Icons/jb.png"
                 description="Find your dream job from thousands of listings."
               />
               <ProductItem
                 title="AI Assessment"
                 href="/services/ai-assessment"
-                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
+                src="/Images/Icons/ai-brain.png"
                 description="AI-driven coding assessments to evaluate and enhance your skills."
-              />
-              <ProductItem
-                title="Placement"
-                href="/services/placement"
-                src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-                description="Get placed in top companies with our dedicated placement services by connect with our network of hiring partners."
               />
             </div>
           </MenuItem>
@@ -249,14 +247,6 @@ export function Navbar({ className }: { className?: string }) {
         <MenuItem setActive={setActive} active={null} item="Try Placemate" />
         </Link>
 
-        <MenuItem setActive={setActive} active={null} item="Pricing">
-          {/* <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Hobby</HoveredLink>
-            <HoveredLink href="/individual">Individual</HoveredLink>
-            <HoveredLink href="/team">Team</HoveredLink>
-            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
-          </div> */}
-        </MenuItem>
       </Menu>
     </div>
   );

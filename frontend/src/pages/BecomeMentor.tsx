@@ -8,6 +8,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
 import { motion, AnimatePresence } from 'framer-motion';
+import { Navbar } from "@/components/ui/navbar-menu";
+import { TextHoverEffect } from "@/components/ui/text-hover-effect";
+import Footer from "@/components/Footer";
 import { 
   User, 
   Briefcase, 
@@ -593,10 +596,16 @@ const BecomeMentor = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-bg">
-      <div className="min-h-screen max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 
-                    m-4 sm:m-6 lg:m-10 border border-blue-300 rounded-3xl overflow-hidden bg-gradient-to-b from-slate-100 to-cyan-50
-                    animate-fade-in mt-20" style={{ marginTop: '5rem' }}>
+    <div className="min-h-screen bg-[#031527]">
+      <Navbar />
+      <div className="relative w-full animate-fade-in">
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="relative z-40 lg:min-h-screen max-w-screen-2xl mx-auto pt-16 bg-gradient-to-b from-cyan-100 to-white overflow-hidden"
+        >
         
         {/* Header */}
         <div className="bg-white/80 backdrop-blur-sm border-b border-gray-200 px-6 py-4">
@@ -714,6 +723,21 @@ const BecomeMentor = () => {
             <div className="text-right mt-4">
               <span className="text-sm text-gray-500">* Mandatory fields</span>
             </div>
+          </div>
+        </div>
+        </motion.section>
+      </div>
+
+      {/* Footer Section */}
+      <div
+        className="-mt-16 relative z-10 min-h-screen max-w-screen-2xl mx-auto px-2 sm:px-6 lg:px-8 border border-blue-300 rounded-tl-[70px] rounded-tr-[70px] overflow-hidden bg-[#FFFFFF] animate-fade-in"
+      >
+        {/* Footer */}
+        <Footer />
+
+        <div className="px-4 sm:px-6 lg:px-8 text-center">
+          <div className="h-[16rem] flex items-center justify-center tracking-widest">
+            <TextHoverEffect text=" AInode " />
           </div>
         </div>
       </div>
